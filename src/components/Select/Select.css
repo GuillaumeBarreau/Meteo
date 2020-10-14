@@ -1,0 +1,12 @@
+.Select-container {
+    min-width: 20.75rem;
+    padding: 1rem;
+    align-self: center;
+    cursor: pointer;
+    border-radius: 0.5rem; 
+    margin-top: 2rem;
+    background-color: #5a7ed5;
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+}

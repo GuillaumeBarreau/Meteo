@@ -1,0 +1,30 @@
+.AtmosphericConditionItem-container {
+    list-style: none;
+    border: 1px solid #000000;
+    padding: 2rem 3rem;
+    margin: 1rem;
+    border-radius: 4px;
+    background: rgb(0 0 0 / 62%);
+    width: 260px;
+    text-align: center;
+}
+
+.AtmosphericConditionItem-container > p {
+    text-transform: capitalize;
+    margin: 1rem;
+}
+
+.AtmosphericConditionItem-container_contentTop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AtmosphericConditionItem-container_contentTop > * {
+     margin: 0rem 0.5rem;
+}
+
+.AtmosphericConditionItem-container_contentTop > svg {
+     height: 80px;
+     width: 80px;
+}
