@@ -4,12 +4,12 @@ import './Select.css';
 
 export const Select = (props) => {
 
-    const { cities, setCity } = props;
+    const { cities, handleChangeCity } = props;
     
     return (
         <select
             className="Select-container"
-            onChange={(e) => setCity(e.target.value)} 
+            onChange={(e) => handleChangeCity(e.target.value)} 
         >
             { 
                 cities.map(city => {
