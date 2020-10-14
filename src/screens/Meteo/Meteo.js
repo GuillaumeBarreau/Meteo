@@ -34,25 +34,25 @@ const Meteo = ({ dispatch, getData, data, loading }) => {
         {
             description: "température",
             icon: "Fleche",
-            value: kelvinToCelsiusConversion(main && main.temp).toFixed(1),
+            value: parseFloat(kelvinToCelsiusConversion(main && main.temp).toFixed(1)),
             unit: "°C"
         },
         {
             description: "vent",
             icon: "FlecheFleche",
-            value: MSToKMConversion(wind && wind.speed).toFixed(1),
+            value: parseFloat(MSToKMConversion(wind && wind.speed).toFixed(1)),
             unit: "km/h"
         },
         {
             description: "humidité",
             icon: "Pluie",
-            value: main && main.humidity,
+            value: parseInt(main && main.humidity),
             unit: "%"
         },
         {
             description: "pression",
             icon: "PluieFleche",
-            value: main && main.pressure,
+            value: parseInt(main && main.pressure),
             unit: "hPa"
         },
     ];

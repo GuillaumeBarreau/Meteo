@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-import Clear from '../../assets/image/Clear.jpg';
-import Clouds from '../../assets/image/Clouds.jpg';
-import Rain from '../../assets/image/Rain.jpg';
-import Fog from '../../assets/image/Fog.jpg';
-import Drizzle from '../../assets/image/Drizzle.jpg';
-import Thunderstorm from '../../assets/image/Thunderstorm.jpg';
-import Nothing from '../../assets/image/Nothing.jpg';
+import { 
+    Clear,
+    Clouds,
+    Rain,
+    Fog,
+    Drizzle,
+    Thunderstorm,
+    Nothing
+} from './exportImages.js';
 
 export const imageType = {
     Clear: Clear,

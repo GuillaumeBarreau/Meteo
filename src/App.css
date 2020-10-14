@@ -1,14 +1,14 @@
 .App {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .App-container {
-  background-color: #282c34;
-  min-height: calc(100vh - 4rem);
-  display: flex;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 2rem;
-  justify-content: space-around;
+    background-color: #282c34;
+    min-height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    padding: 2rem;
+    justify-content: space-around;
 }

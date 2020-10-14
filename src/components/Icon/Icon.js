@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ReactComponent as Fleche } from '../../assets/icon/Fleche.svg';
-import { ReactComponent as FlecheFleche } from '../../assets/icon/FlecheFleche.svg';
-import { ReactComponent as Pluie } from '../../assets/icon/Pluie.svg';
-import { ReactComponent as PluieFleche } from '../../assets/icon/PluieFleche.svg';
+import {
+    Fleche,
+    FlecheFleche,
+    Pluie,
+    PluieFleche
+} from './exportIcons.js';
 
 export const iconType = {
     Fleche: Fleche,

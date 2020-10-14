@@ -6,7 +6,7 @@ import { Typography } from '../Typography';
 
 export const AtmosphericConditionItem = (props) => {
 
-    const { value, icon, description, unit } = props.atmosphericCondition;
+    const { value, icon, description, unit } = props;
 
     return (
         <li className="AtmosphericConditionItem-container">
