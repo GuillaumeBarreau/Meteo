@@ -8,19 +8,18 @@ import { imageType } from '../../components/Image';
 import { Select } from '../../components/Select';
 import { connect } from 'react-redux'
 import { getData } from '../../store/actions/data.action'
-import {
-    kelvinToCelsiusConversion,
-    MSToKMConversion
-} from '../../utils/unitConverter';
+import { adapterAtmosphericConditions } from '../../utils/adapterAtmosphericConditions';
+import { kelvinToCelsiusConversion } from '../../utils/unitConverter';
+import { listsOfCities } from '../../data/cities';
 
 const Meteo = ({ dispatch, getData, data, loading }) => {
 
     const [city, setCity] = useState('paris');
-
+    
     useEffect(() => {
         getData(city)
     }, [city]);
-
+    
     const {
         coord,
         name,
@@ -29,35 +28,10 @@ const Meteo = ({ dispatch, getData, data, loading }) => {
         weather,
         dt,
     } = data;
+    
+    const atmosphericConditions = adapterAtmosphericConditions(main, wind);
 
-    const adapterAtmosphericConditions = [
-        {
-            description: "température",
-            icon: "Fleche",
-            value: parseFloat(kelvinToCelsiusConversion(main && main.temp).toFixed(1)),
-            unit: "°C"
-        },
-        {
-            description: "vent",
-            icon: "FlecheFleche",
-            value: parseFloat(MSToKMConversion(wind && wind.speed).toFixed(1)),
-            unit: "km/h"
-        },
-        {
-            description: "humidité",
-            icon: "Pluie",
-            value: parseInt(main && main.humidity),
-            unit: "%"
-        },
-        {
-            description: "pression",
-            icon: "PluieFleche",
-            value: parseInt(main && main.pressure),
-            unit: "hPa"
-        },
-    ];
-
-    const cities = ['paris', 'london', 'bangkok'];
+    const cities = listsOfCities;
    
     return (
         <section className="App-container"
@@ -80,14 +54,14 @@ const Meteo = ({ dispatch, getData, data, loading }) => {
                             component="h2"
                             variant="medium"
                         >
-                                {moment.unix(dt).format('MMMM Do YYYY')}
+                            {moment.unix(dt).format('MMMM Do YYYY')}
                         </Typography>
                         <Typography
                             variant="medium"
                         >
                             {`${kelvinToCelsiusConversion(main && main.temp).toFixed(1)} °C`}
                         </Typography>
-                        <AtmosphericConditionsWrapper AtmosphericConditions={adapterAtmosphericConditions} />
+                    <AtmosphericConditionsWrapper AtmosphericConditions={atmosphericConditions} />
                     </div>
                     <div className="App-container_contentBottom">
                         <Select setCity={setCity} cities={cities}>{name}</Select>
@@ -104,21 +78,21 @@ Meteo.propTypes = {
     loading: PropTypes.bool.isRequired,
     data: PropTypes.shape({
         coord: PropTypes.shape({
-            lon: PropTypes.number,
-            lat: PropTypes.number,
+            lon: PropTypes.number.isRequired,
+            lat: PropTypes.number.isRequired,
         }),
         name: PropTypes.string,
         wind: PropTypes.shape({
-            speed: PropTypes.number,
+            speed: PropTypes.number.isRequired,
         }),
         main: PropTypes.shape({
-            humidity: PropTypes.number,
-            pressure: PropTypes.number,
-            temp: PropTypes.number,
+            humidity: PropTypes.number.isRequired,
+            pressure: PropTypes.number.isRequired,
+            temp: PropTypes.number.isRequired,
         }),
         weather: PropTypes.arrayOf(
             PropTypes.shape({
-                main: PropTypes.string,
+                main: PropTypes.string.isRequired,
             })
         )
     })

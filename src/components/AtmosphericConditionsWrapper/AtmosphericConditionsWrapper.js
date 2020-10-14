@@ -6,6 +6,7 @@ import { AtmosphericConditionItem } from '../AtmosphericConditionItem';
 export const AtmosphericConditionsWrapper = (props) => {
 
     const { AtmosphericConditions } = props;
+
     return (    
         <ul
             className="AtmosphericConditionsContainer"
@@ -21,6 +22,10 @@ export const AtmosphericConditionsWrapper = (props) => {
         </ul>
     );
 };
+
+AtmosphericConditionsWrapper.defaultProps = {
+    AtmosphericConditions: [''],
+}
 
 AtmosphericConditionsWrapper.propTypes = {
     AtmosphericConditions: PropTypes.array,
