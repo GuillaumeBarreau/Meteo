@@ -15,6 +15,8 @@ import { listsOfCities } from '../../data/cities';
 const Meteo = ({ dispatch, getData, data, loading }) => {
 
     const [city, setCity] = useState('paris');
+
+    const handleChangeCity = (selectCity) => setCity(selectCity);
     
     useEffect(() => {
         getData(city)
@@ -64,7 +66,7 @@ const Meteo = ({ dispatch, getData, data, loading }) => {
                     <AtmosphericConditionsWrapper AtmosphericConditions={atmosphericConditions} />
                     </div>
                     <div className="App-container_contentBottom">
-                        <Select setCity={setCity} cities={cities}>{name}</Select>
+                    <Select handleChangeCity={handleChangeCity} cities={cities}>{name}</Select>
                     </div>
                 </>
             }
