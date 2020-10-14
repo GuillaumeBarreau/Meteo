@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Container } from './';
+import { Typography } from './Typography';
 
 it('renders without crashing', () => {
-    shallow(<Container />);
+    shallow(<Typography />);
 });
 
 describe('Typography Component', () => {
@@ -18,17 +18,17 @@ describe('Typography Component', () => {
     })
 
     it('Should contain a value children props value', () => {
-        const wrapper = shallow(<Container>{props.children}</Container>);
+        const wrapper = shallow(<Typography>{props.children}</Typography>);
         expect(wrapper.html()).toContain("children props value");
     })
 
     it('Should contain a element section', () => {
-        const wrapper = shallow(<Container component={props.component}>{props.children}</Container>);
+        const wrapper = shallow(<Typography component={props.component}>{props.children}</Typography>);
         expect(wrapper.html()).toContain("section");
     })
 
     it('Should contain a value Typography_container--variant', () => {
-        const wrapper = shallow(<Container variant={props.variant}>{props.children}</Container>);
+        const wrapper = shallow(<Typography variant={props.variant}>{props.children}</Typography>);
         expect(wrapper.html()).toContain("Typography_container--variant");
     })
 });

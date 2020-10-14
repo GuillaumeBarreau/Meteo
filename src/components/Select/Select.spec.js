@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { Select } from '.';
 
 it('renders without crashing', () => {
@@ -9,14 +9,22 @@ it('renders without crashing', () => {
 describe('Select Component', () => {
 
     let props;
+
     beforeEach(() => {
         props = {
-            children: 'children'
+            cities: ['option01', 'option02', 'option03']
         }
     })
 
-    it('Should contain a value children props value', () => {
-        const wrapper = shallow(<Select>{props.children}</Select>);
-        expect(wrapper.html()).toContain("children");
+    it('Should contain a value option01', () => {
+        const wrapper = shallow(<Select {...props} />);
+        expect(wrapper.html()).toContain("option01");
+        expect(wrapper.html()).toContain("option02");
+        expect(wrapper.html()).toContain("option03");
+    })
+
+    it('Should count 3 elements options', () => {
+        const wrapper = shallow(<Select {...props} />);
+        expect(wrapper.find('option').length).toBe(props.cities.length);
     })
 });
