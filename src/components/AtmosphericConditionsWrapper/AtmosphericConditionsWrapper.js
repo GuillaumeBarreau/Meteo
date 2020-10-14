@@ -6,7 +6,6 @@ import { AtmosphericConditionItem } from '../AtmosphericConditionItem';
 export const AtmosphericConditionsWrapper = (props) => {
 
     const { AtmosphericConditions } = props;
-
     return (    
         <ul
             className="AtmosphericConditionsContainer"
@@ -15,7 +14,7 @@ export const AtmosphericConditionsWrapper = (props) => {
                 AtmosphericConditions.map((atmosphericCondition, index) => 
                     <AtmosphericConditionItem 
                         key={index}
-                        atmosphericCondition={atmosphericCondition} 
+                        {...atmosphericCondition} 
                     />
                 )
             }

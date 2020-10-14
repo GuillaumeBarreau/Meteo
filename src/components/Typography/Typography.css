@@ -5,15 +5,15 @@
 }
 
 .Typography_container--medium {
-   font-size: calc(2.8rem + 1.6vmin);
-   font-weight: 200;
+    font-size: calc(2.8rem + 1.6vmin);
+    font-weight: 300;
 }
 
 .Typography_container--small {
-   font-size: calc(1.2rem + 1.2vmin);
+    font-size: calc(1.2rem + 1.2vmin);
 }
 
 .Typography_container {
-   font-size: calc(0.8rem + 0.8vmin);
-   font-weight: 200;
+    font-size: calc(0.8rem + 0.8vmin);
+    font-weight: 200;
 }
