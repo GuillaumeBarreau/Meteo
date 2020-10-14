@@ -7,7 +7,8 @@ import {
     Fog,
     Drizzle,
     Thunderstorm,
-    Nothing
+    Nothing,
+    Snow
 } from './exportImages.js';
 
 export const imageType = {
@@ -18,6 +19,7 @@ export const imageType = {
     Drizzle: Drizzle,
     Thunderstorm: Thunderstorm,
     Nothing: Nothing,
+    Snow: Snow,
 };
 
 export const Image = (props) => {

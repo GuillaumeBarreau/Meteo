@@ -21,7 +21,7 @@ export const AtmosphericConditionItem = (props) => {
 
 AtmosphericConditionItem.defaultProps = {
     description: 'description not found',
-    icon: 'icon',
+    icon: 'Fleche',
     value: 0,
     city: 'not found'
 }
